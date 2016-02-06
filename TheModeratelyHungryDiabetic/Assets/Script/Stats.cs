@@ -21,5 +21,6 @@ public static class Stats : object {
 		GameObjects [1] = new ObjectStats ("Wall1", 1, QType.Blocking, Direction.None, 2, typeof(Wall));
 		GameObjects [2] = new ObjectStats ("Wall2", 1, QType.Blocking, Direction.None, 3, typeof(Wall));
 	}
+		
 
 }

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerClass : MonoBehaviour {
 
+	public int StatsTimer = 0;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,4 +14,5 @@ public class PlayerClass : MonoBehaviour {
 	void Update () {
 	
 	}
-}
+
+
