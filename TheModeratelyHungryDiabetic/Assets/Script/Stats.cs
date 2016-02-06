@@ -29,4 +29,11 @@ public static class Stats : object {
 		}
 	}
 
+	public static void ResetStats(){
+		
+	}
+
+
+
+
 }

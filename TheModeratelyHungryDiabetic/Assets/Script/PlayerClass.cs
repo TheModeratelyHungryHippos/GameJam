@@ -15,4 +15,4 @@ public class PlayerClass : MonoBehaviour {
 	
 	}
 
-
+}

@@ -34,7 +34,7 @@ public class StatsEditor : MonoBehaviour {
 
 	public void RunEditor() {
 		while (isStopped == false) {
-			WaitForSeconds (1);
+			new WaitForSeconds(1);
 			StatsTimer++;
 			AdjustAllWeights ();
 		}
@@ -66,9 +66,7 @@ public class StatsEditor : MonoBehaviour {
 
 		} else if (StatsTimer <= LevelThree) {
 			
-		}
-
-		else {
+		} else {
 			Stats.GeneratedItemsPercent [3]++;
 			Stats.GeneratedItemsPercent [4]++;
 			if (StatsTimer >= 60) {
@@ -80,14 +78,11 @@ public class StatsEditor : MonoBehaviour {
 			}
 		}
 	}
-
 	/// <summary>
 	/// Adjusts the object weights.
 	/// </summary>
 	private void AdjustObjWeights(){
-		if (StatsTimer <= LevelOne) {
-			Stats.GameObjects
-		}
+		//if (StatsTimer <= LevelOne) {
+		//	Stats.GameObjects
 	}
-
 }

@@ -77,12 +77,8 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 -define:CROSS_PLATFORM_INPUT
-'Assets/Script/Generator.cs'
-'Assets/Script/ObjectStats.cs'
+'Assets/Script/Draw.cs'
 'Assets/Script/PlayerClass.cs'
-'Assets/Script/Stats.cs'
-'Assets/Script/StatsEditor.cs'
 'Assets/Script/Test.cs'
-'Assets/Script/Wall.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'
