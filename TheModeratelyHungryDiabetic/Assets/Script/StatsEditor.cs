@@ -6,6 +6,10 @@ public class StatsEditor : MonoBehaviour {
 	int StatsTimer = 0;
 	public const int LevelOne = 10;
 	public const int LevelTwo = 20;
+	public const int LevelThree = 30;
+	public const int LevelFour = 40;
+	public const int LevelFive = 50;
+	public const int MaxLevel = 60;
 
 
 	bool isStopped = true;
@@ -60,7 +64,11 @@ public class StatsEditor : MonoBehaviour {
 				Stats.GeneratedItemsPercent [2]++;
 			}
 
-		} else {
+		} else if (StatsTimer <= LevelThree) {
+			
+		}
+
+		else {
 			Stats.GeneratedItemsPercent [3]++;
 			Stats.GeneratedItemsPercent [4]++;
 			if (StatsTimer >= 60) {
