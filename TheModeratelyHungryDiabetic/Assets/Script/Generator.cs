@@ -16,7 +16,7 @@ public static class Generator : object {
 		// |   +-----+   |
 		// |  2   |  3   |
 		// --------------
-		List<int> output = new List<int>() { 0, 0, 0, 0, 0 }; 
+		List<int> output = new List<int>() { -1, -1, -1, -1, -1 }; 
 
 		int[] weights = Stats.GameObjects.Select (x => x.Weight).ToArray<int> ();
 
@@ -35,13 +35,13 @@ public static class Generator : object {
 		foreach (ObjectStats x in selectedObjects) {
 			if (x.QType == QType.FullRoom) {
 				output [4] = x.ID;
-				//Draw.Update(output);
+				Draw.Update(output.ToArray<int>());
 				return;
 			}
 		}
 
 		// Arbitrarily assign locations
-		List<int> availIndexes = new List<int>() { 0, 1, 2, 3, 4};
+		List<int> availIndexes = new List<int>() { 0, 1, 2, 3};
 		for (int i = 0; i < selectedObjects.Count; i++) {
 			int idx = UnityEngine.Random.Range (0, availIndexes.Count);
 			output [availIndexes [idx]] = selectedObjects [i].ID;
@@ -51,40 +51,63 @@ public static class Generator : object {
 
 		// If a  "Moving" type is selected we make room for it
 		// Potential Bug here. What happens when 2 moving types with the same ID are selected?
-		foreach(ObjectStats x in selectedObjects){
+		foreach (ObjectStats x in selectedObjects) {
 			if (x.QType == QType.Moving) {
 				int idx = output.FindIndex (y => y == x.ID);
 
 				switch (idx) {
 				case 0:
 					if (x.Direction == Direction.LeftRight) {
+						// 1 is cleared
 					} else {
+						// 2 is cleared
 					}
 					break;
 				case 1:
 					if (x.Direction == Direction.LeftRight) {
+						// 0
 					} else {
+						// 3
 					}
 					break;
 				case 2:
 					if (x.Direction == Direction.LeftRight) {
+						// 3
 					} else {
+						// 0
 					}
 					break;
 				case 3:
 					if (x.Direction == Direction.LeftRight) {
+						// 2
 					} else {
+						// 1
 					}
 					break;
-				case 4:
-					if (x.Direction == Direction.LeftRight) {
-					} else {
-					}
-					break;
-					
 				}
 			}
 		}
+
+		// Make sure there is an open space
+		if (output.Contains (-1)) {
+			Draw.Update(output.ToArray<int>());
+			return;
+		}
+
+		foreach (ObjectStats x in selectedObjects) {
+			if (x.QType == QType.Avoidable) {
+				Draw.Update(output.ToArray<int>());
+				return;
+			}
+		}
+
+		// If we get here then we need to make space for the player
+		int rnd = UnityEngine.Random.Range(0, 4);
+		output[rnd] = -1;
+
+		Draw.Update(output.ToArray<int>());
+		return;
+	
 
 	}
 
