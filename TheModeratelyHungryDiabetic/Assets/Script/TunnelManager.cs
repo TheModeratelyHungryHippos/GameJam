@@ -4,17 +4,17 @@ using System.Collections.Generic;
 
 public class TunnelManager : MonoBehaviour {
 
-	public Rigidbody tunnelPrefab;
+	public GameObject tunnelPrefab;
 	public GameObject player;
-	private Rigidbody lastTunnel;
+	private GameObject lastTunnel;
 
 	private int skipCount = 0;
 
-	private System.Collections.Generic.Queue<Rigidbody> tunnelQueue = new System.Collections.Generic.Queue<Rigidbody>();
+	private System.Collections.Generic.Queue<GameObject> tunnelQueue = new System.Collections.Generic.Queue<GameObject>();
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < 20; i++) {
-			lastTunnel = (Rigidbody)Instantiate (tunnelPrefab, new Vector3(35, 100 - (i * 10), 0), new Quaternion());
+			lastTunnel = (GameObject)Instantiate (tunnelPrefab, new Vector3(35, 100 - (i * 10), 0), new Quaternion());
 			tunnelQueue.Enqueue (lastTunnel);
 		}
 	}
@@ -23,7 +23,7 @@ public class TunnelManager : MonoBehaviour {
 	void Update () {
 		if (tunnelQueue.Peek ().transform.position.y > player.transform.position.y) {
 			Destroy(tunnelQueue.Dequeue().gameObject);
-			lastTunnel = (Rigidbody)Instantiate (tunnelPrefab, new Vector3 (35, lastTunnel.transform.position.y- (10 - lastTunnel.GetComponent<TunnelSegment>().Speed), 0), new Quaternion ());
+			lastTunnel = (GameObject)Instantiate (tunnelPrefab, new Vector3 (35, lastTunnel.transform.position.y- (10 - lastTunnel.GetComponent<TunnelSegment>().Speed), 0), new Quaternion ());
 			tunnelQueue.Enqueue (lastTunnel);
 
 			if (skipCount == 0) {

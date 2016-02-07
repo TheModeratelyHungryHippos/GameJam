@@ -4,7 +4,7 @@ using System.Collections;
 
 public class TunnelSegment : MonoBehaviour {
 
-	public float Speed = 0.1f;
+	public float Speed = 10f;
 	public bool ShouldGenOb = false;
 
 	public Transform[] quads;
@@ -34,6 +34,7 @@ public class TunnelSegment : MonoBehaviour {
 			}
 
 		}
+		//GetComponent<Rigidbody>().AddForce(new Vector3(0, Speed, 0));
 	}
 
 	// Update is called once per frame

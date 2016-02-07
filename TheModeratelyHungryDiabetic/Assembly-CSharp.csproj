@@ -62,6 +62,7 @@
      <Compile Include="Assets\Script\InsulinOne.cs" />
      <Compile Include="Assets\Script\InsulinSeven.cs" />
      <Compile Include="Assets\Script\InsulinThree.cs" />
+     <Compile Include="Assets\Script\MovementScript.cs" />
      <Compile Include="Assets\Script\ObjectStats.cs" />
      <Compile Include="Assets\Script\ParentPhysObj.cs" />
      <Compile Include="Assets\Script\PlayerClass.cs" />
