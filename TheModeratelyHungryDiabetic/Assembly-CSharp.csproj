@@ -44,15 +44,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\BlockingWall.cs" />
     <Compile Include="Assets\Script\Draw.cs" />
     <Compile Include="Assets\Script\Generator.cs" />
     <Compile Include="Assets\Script\ObjectStats.cs" />
+    <Compile Include="Assets\Script\ParentPhysObj.cs" />
     <Compile Include="Assets\Script\PlayerClass.cs" />
     <Compile Include="Assets\Script\Stats.cs" />
     <Compile Include="Assets\Script\StatsEditor.cs" />
     <Compile Include="Assets\Script\Test.cs" />
     <Compile Include="Assets\Script\TunnelSegment.cs" />
-    <Compile Include="Assets\Script\Wall.cs" />
     <Reference Include="UnityEngine.UI">
       <HintPath>..\..\..\..\..\Applications\Unity\Unity.app\Contents\UnityExtensions\Unity\GUISystem\UnityEngine.UI.dll</HintPath>
     </Reference>

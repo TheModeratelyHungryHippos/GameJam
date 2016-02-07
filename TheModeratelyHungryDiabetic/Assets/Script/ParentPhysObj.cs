@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Wall : MonoBehaviour {
-
-	// NOTE: THIS IS A TEMP CLASS
-	// SOMETHING SHOULD BE DONE WITH
-	// IT AT SOME POINT IN TIME
+public class ParentPhysObj : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
