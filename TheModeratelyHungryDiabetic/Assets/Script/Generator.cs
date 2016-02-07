@@ -59,7 +59,7 @@ public static class Generator : object {
 
 				if (idx == -1) {
 					Debug.Log (x.Name);
-					throw new Exception ();
+					throw new Exception ("Tell Ashley this happened. It shouldn't but it might");
 					continue;
 				}
 

@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Text;
 using System.Collections;
+using System.Collections.Generic;
 
 public static class Draw : object {
 
-	public Queue<TunnelSegment> TunnelQueue = new Queue<TunnelSegment> ();
-
+	public static System.Collections.Generic.Queue<TunnelSegment> TunnelQueue = new System.Collections.Generic.Queue<TunnelSegment>();
 
 	/// <summary>
 	/// Sets up initial tunnel.
@@ -23,14 +23,15 @@ public static class Draw : object {
 		//need to add wall section to list of walls
 		AddTunnleSegment(GeneratorObjects);
 
-		printArr (x);
+		printArr (GeneratorObjects);
 	}
 
 	public static void AddTunnleSegment(int[] x) {
 		
 	}
 
-	private static void AddObjectsToSectors
+	private static void AddObjectsToSectors(){
+	}
 
 
 
