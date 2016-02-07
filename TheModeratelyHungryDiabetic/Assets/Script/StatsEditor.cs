@@ -92,7 +92,59 @@ public class StatsEditor : MonoBehaviour {
 	/// Adjusts the object weights.
 	/// </summary>
 	private void AdjustObjWeights(){
-		//if (StatsTimer <= LevelOne) {
-		//	Stats.GameObjects
+		if (StatsTimer <= LevelOne) {
+			foreach (ObjectStats iObj in Stats.GameObjects) {
+				if (iObj.QType == QType.Avoidable) {
+					iObj.Weight++;
+				} else {
+					iObj.Weight += 2;
+				}
+			}
+		}
+
+		else if (StatsTimer <= LevelTwo) {
+			foreach (ObjectStats iObj in Stats.GameObjects) {
+				if (iObj.QType == QType.Avoidable) {
+					iObj.Weight++;
+				} else {
+					iObj.Weight += 4;
+				}
+			}
+		}
+
+		else if (StatsTimer <= LevelThree) {
+			foreach (ObjectStats iObj in Stats.GameObjects) {
+				if (iObj.QType != QType.Avoidable) {
+					iObj.Weight += 8;
+				}
+			}
+		}
+
+		else if (StatsTimer <= LevelFour) {
+			foreach (ObjectStats iObj in Stats.GameObjects) {
+				if (iObj.QType != QType.Avoidable) {
+					iObj.Weight += 12;
+				}
+			}
+		}
+
+		else if (StatsTimer <= LevelFive) {
+			foreach (ObjectStats iObj in Stats.GameObjects) {
+				if (iObj.QType != QType.Avoidable) {
+					iObj.Weight += 24;
+				}
+			}
+		}
+		else {
+			foreach (ObjectStats iObj in Stats.GameObjects) {
+				if (iObj.QType != QType.Avoidable) {
+					iObj.Weight += 20;
+				}
+			}
+		}
+
+
 	}
 }
+
+
