@@ -59,7 +59,7 @@ public class MovementScript : MonoBehaviour
 		if (col.gameObject.GetComponent<ParentPhysObj> ().isDeath) {
 			Debug.Log ("ded");
 		} else {
-		// Update carbs here.
+			gameObject.GetComponent<CarbBar>().ConsumePowerup (col.gameObject.GetComponent<ParentPhysObj>().CarbChange);
 		}
 
 

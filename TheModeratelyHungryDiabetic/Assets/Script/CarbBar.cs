@@ -9,6 +9,10 @@ public class CarbBar : MonoBehaviour {
 
 	public GameObject CarbBarGUI;
 
+	public GameObject CarbBarSlider;
+
+	public TextMesh Text;
+
 	public GameObject BlindnessOverlay;
 
 	const int LowCarbs = 120;
@@ -23,6 +27,8 @@ public class CarbBar : MonoBehaviour {
 
 	const int MaxCarbs = 420;
 
+	const int DefaultCarbs = 210;
+
 	int ShakingMeter = 0;
 
 	int StrokeMeter = 0;
@@ -31,15 +37,31 @@ public class CarbBar : MonoBehaviour {
 
 	int HeartAttackMeter =0;
 
+	float Width { get; set; }
+
+	float CarbBarStep { get; set; }
+	float LastStep { get; set; }
+
 	bool isVisible { get; set; }
 
 	// Use this for initialization
 	void Start () {
+		GetWidthOfBar ();
+		StartCarbBar ();
 		InvokeRepeating ("UpdateCarbBar", 0, 1);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+	}
+
+	private void GetWidthOfBar(){
+		Vector3 lCarbBarSize = CarbBarGUI.GetComponent<Renderer>().bounds.size;
+		Width = lCarbBarSize.x;
+		CarbBarStep = Width / MaxCarbs;
+		Debug.Log (CarbBarStep);
+
 	}
 
 	public void ConsumePowerup(int numberOfCarbs){
@@ -59,6 +81,7 @@ public class CarbBar : MonoBehaviour {
 	}
 
 	void UpdateCarbBar() {
+		Debug.Log (CarbLevel);
 		if (isVisible) {
 			if (CarbLevel > 0) {
 				if (CarbLevel > MaxCarbs) {
@@ -68,6 +91,7 @@ public class CarbBar : MonoBehaviour {
 			} else {
 				CarbLevel = 0;
 			}
+			/*
 			ModifyShakingMeter ();
 			SyncScreenShake (); //NEEDS FINISHING
 
@@ -80,6 +104,18 @@ public class CarbBar : MonoBehaviour {
 			ModifyHeartAttackMeter ();
 			SyncHeartAttack (); //NEEDS FINISHING
 
+*/			//Debug.Log (((float)((DefaultCarbs - CarbLevel) * CarbBarStep)));
+
+			//CarbBarSlider.transform.position = new Vector3(((float)((DefaultCarbs - CarbLevel ) * CarbBarStep )), CarbBarSlider.transform.position.y, CarbBarSlider.transform.position.z);
+
+			//float x = CarbBarSlider.transform.position.x;
+			//float y = ((float)((DefaultCarbs - CarbLevel) * CarbBarStep));
+
+			//CarbBarSlider.transform.position = new Vector3 (y, 0f, 0f);
+
+			Text.text = CarbLevel.ToString();
+
+			//Debug.Log (y);
 		}
 	}
 
