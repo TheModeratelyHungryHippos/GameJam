@@ -20,7 +20,7 @@ public class TunnelSegment : MonoBehaviour {
 			}; 
 
 			int[] obsticles = Generator.Generate();
-
+			Debug.Log (obsticles [0] + " " + obsticles [1] + " " + obsticles [2] + " " + obsticles [3] + " " + obsticles [4]);
 			for (int i = 0; i < quads.Length; i++) {
 				if (obsticles [i] == -1) {
 					continue;

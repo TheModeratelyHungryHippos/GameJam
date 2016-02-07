@@ -25,6 +25,15 @@ public class MovementScript : MonoBehaviour
         float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis ("Vertical");
 
+		CarbBar x = gameObject.GetComponent<CarbBar> ();
+		//print (x.CarbLevel);
+		if (x.CarbLevel <= 0 || x.CarbLevel >= 420) {
+			print (x.CarbLevel);
+			print ("MASMMAM");
+			killme ();
+		}
+
+
 		if (!isHavingStroke && !isHavingHeartAttack) {
 			// Movement per direction
 			movement = new Vector3 (speed.x * inputX, 0, speed.z * inputY);
@@ -57,6 +66,7 @@ public class MovementScript : MonoBehaviour
 		}
 
 		if (col.gameObject.GetComponent<ParentPhysObj> ().isDeath) {
+			print ("HErer");
 			killme ();
 		} else {
 			gameObject.GetComponent<CarbBar>().ConsumePowerup (col.gameObject.GetComponent<ParentPhysObj>().CarbChange);

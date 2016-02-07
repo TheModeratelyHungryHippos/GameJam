@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CarbBar : MonoBehaviour {
 
-	int CarbLevel { get; set; }
+	public int CarbLevel { get; set; }
 
 	public GameObject Player;
 
@@ -91,10 +91,10 @@ public class CarbBar : MonoBehaviour {
 			} else {
 				CarbLevel = 0;
 			}
-
+			/*
 			ModifyShakingMeter ();
 
-			/*
+
 			ModifyShakingMeter ();
 			SyncScreenShake (); //NEEDS FINISHING
 
@@ -106,8 +106,8 @@ public class CarbBar : MonoBehaviour {
 
 			ModifyHeartAttackMeter ();
 			SyncHeartAttack (); //NEEDS FINISHING
-
-*/			//Debug.Log (((float)((DefaultCarbs - CarbLevel) * CarbBarStep)));
+*/
+			//Debug.Log (((float)((DefaultCarbs - CarbLevel) * CarbBarStep)));
 
 			//CarbBarSlider.transform.position = new Vector3(((float)((DefaultCarbs - CarbLevel ) * CarbBarStep )), CarbBarSlider.transform.position.y, CarbBarSlider.transform.position.z);
 

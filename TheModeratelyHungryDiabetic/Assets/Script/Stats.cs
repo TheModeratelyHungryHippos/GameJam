@@ -12,10 +12,6 @@ public static class Stats : object {
 
 	// Use this for initialization
 	public static void Init () {
-		if (hasBeenInit) {
-			return;
-		}
-		hasBeenInit = true;
 
 		// % No items, % One items, % Two items, % Three items, % Four items
 		GeneratedItemsPercent = new int[5]{1, 1, 1, 1, 1 };
