@@ -3,6 +3,9 @@ using System.Collections;
 
 public class ParentPhysObj : MonoBehaviour {
 	// Use this for initialization
+	public bool isDeath = false;
+	public int CarbChange = 0;
+
 	void Start () {
 	}
 	

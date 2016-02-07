@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1edfe8319a0645309853fb1bb0aaefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tunnelPrefab: {fileID: 124364, guid: 8998e4d7898d541febaa10b0de087ce8, type: 2}
+  tunnelPrefab: {fileID: 106544, guid: 6b8640d3434f2416a892bcc27021ae56, type: 2}
   player: {fileID: 727179493}
 --- !u!4 &1687301521
 Transform:

@@ -50,5 +50,21 @@ public class MovementScript : MonoBehaviour
 		GetComponent<Rigidbody>().velocity = movement;
     }
 
+	void OnCollisionEnter (Collision col)
+	{
+		if (col.gameObject.GetComponent<TunnelSegment> () != null) {
+			return;
+		}
+
+		if (col.gameObject.GetComponent<ParentPhysObj> ().isDeath) {
+			Debug.Log ("ded");
+		} else {
+		// Update carbs here.
+		}
+
+
+		Destroy (col.gameObject);
+	}
+
 }
 

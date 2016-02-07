@@ -24,14 +24,14 @@ public static class Stats : object {
 		GameObjects [1] = new ObjectStats ("FoodPineapple", 1, QType.Avoidable, Direction.None, 20, Stats.Load("PineapplePrefab")); 
 		GameObjects [2] = new ObjectStats ("FoodBigPretzel", 2, QType.Avoidable, Direction.None, 20, Stats.Load("PretzelPrefab")); 
 		GameObjects [3] = new ObjectStats ("FoodPizza", 3, QType.Avoidable, Direction.None, 20, Stats.Load("PizzaPrefab")); 
-		GameObjects [4] = new ObjectStats ("InsulinOne", 4, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));  
-		GameObjects [5] = new ObjectStats ("InsulinThree", 5, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));
-		GameObjects [6] = new ObjectStats ("InsulinFive", 6, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));
-		GameObjects [7] = new ObjectStats ("InsulinSeven", 7, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));
+		GameObjects [4] = new ObjectStats ("InsulinOne", 4, QType.Avoidable, Direction.None, 20, Stats.Load("InsulinOne"));  
+		GameObjects [5] = new ObjectStats ("InsulinThree", 5, QType.Avoidable, Direction.None, 20, Stats.Load("InsulinThree"));
+		GameObjects [6] = new ObjectStats ("InsulinFive", 6, QType.Avoidable, Direction.None, 20, Stats.Load("InsulinFive"));
+		GameObjects [7] = new ObjectStats ("InsulinSeven", 7, QType.Avoidable, Direction.None, 20, Stats.Load("InsulinSeven"));
 		GameObjects [8] = new ObjectStats ("BlockingWall", 8, QType.Blocking, Direction.None, 20, Stats.Load("WallRegularPrefab"));
 		GameObjects [9] = new ObjectStats ("BlockingUDWall", 9, QType.Moving, Direction.UpDown, 0, null);
 		GameObjects [10] = new ObjectStats ("BlockingLRWall", 10, QType.Moving, Direction.LeftRight, 0, null);
-		GameObjects [11] = new ObjectStats ("Fan", 11, QType.FullRoom, Direction.None, 40, Stats.Load("FanPrefab"));
+		GameObjects [11] = new ObjectStats ("Fan", 11, QType.FullRoom, Direction.None, 5, Stats.Load("FanPrefab"));
 
 
 		for (int i = 0; i < GameObjects.Length; i++) {
@@ -46,6 +46,7 @@ public static class Stats : object {
 	private static Transform Load(string name){
 
 		Transform x = (Transform)Resources.Load(name, typeof(Transform));
+		//Debug.Log (name);
 		return (Transform)UnityEngine.Object.Instantiate (x);
 
 	}
