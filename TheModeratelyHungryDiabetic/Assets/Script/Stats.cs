@@ -19,20 +19,19 @@ public static class Stats : object {
 
 		// % No items, % One items, % Two items, % Three items, % Four items
 		GeneratedItemsPercent = new int[5]{1, 1, 1, 1, 1 };
-		GameObjects = new ObjectStats[11];
-		GameObjects [0] = new ObjectStats ("FoodBanana", 0, QType.Avoidable, Direction.None, 20, typeof(FoodBanana));
-		GameObjects [1] = new ObjectStats ("FoodPineapple", 1, QType.Avoidable, Direction.None, 20, typeof(FoodPineapple)); 
-		GameObjects [2] = new ObjectStats ("FoodBigPretzel", 2, QType.Avoidable, Direction.None, 20, typeof(FoodBigPretzel)); 
-		GameObjects [3] = new ObjectStats ("FoodPizza", 3, QType.Avoidable, Direction.None, 20, typeof(FoodPizza)); 
-		GameObjects [4] = new ObjectStats ("InsulinOne", 4, QType.Avoidable, Direction.None, 20, typeof(InsulinOne));  
-		GameObjects [5] = new ObjectStats ("InsulinThree", 5, QType.Avoidable, Direction.None, 20, typeof(InsulinThree));
-		GameObjects [6] = new ObjectStats ("InsulinFive", 6, QType.Avoidable, Direction.None, 20, typeof(InsulinFive));
-		GameObjects [7] = new ObjectStats ("InsulinSeven", 7, QType.Avoidable, Direction.None, 20, typeof(InsulinSeven));
-		GameObjects [8] = new ObjectStats ("BlockingWall", 8, QType.Blocking, Direction.None, 20, typeof(BlockingWall));
-		GameObjects [9] = new ObjectStats ("BlockingUDWall", 9, QType.Moving, Direction.UpDown, 20, typeof(BlockingUDWall));
-		GameObjects [10] = new ObjectStats ("BlockingLRWall", 10, QType.Moving, Direction.LeftRight, 20, typeof(BlockingWall));
-
-
+		GameObjects = new ObjectStats[12];
+		GameObjects [0] = new ObjectStats ("FoodBanana", 0, QType.Avoidable, Direction.None, 20, Stats.Load("BananaPrefab"));
+		GameObjects [1] = new ObjectStats ("FoodPineapple", 1, QType.Avoidable, Direction.None, 20, Stats.Load("PineapplePrefab")); 
+		GameObjects [2] = new ObjectStats ("FoodBigPretzel", 2, QType.Avoidable, Direction.None, 20, Stats.Load("PretzelPrefab")); 
+		GameObjects [3] = new ObjectStats ("FoodPizza", 3, QType.Avoidable, Direction.None, 20, Stats.Load("PizzaPrefab")); 
+		GameObjects [4] = new ObjectStats ("InsulinOne", 4, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));  
+		GameObjects [5] = new ObjectStats ("InsulinThree", 5, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));
+		GameObjects [6] = new ObjectStats ("InsulinFive", 6, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));
+		GameObjects [7] = new ObjectStats ("InsulinSeven", 7, QType.Avoidable, Direction.None, 20, Stats.Load("SyringePrefab"));
+		GameObjects [8] = new ObjectStats ("BlockingWall", 8, QType.Blocking, Direction.None, 20, Stats.Load("WallRegularPrefab"));
+		GameObjects [9] = new ObjectStats ("BlockingUDWall", 9, QType.Moving, Direction.UpDown, 0, null);
+		GameObjects [10] = new ObjectStats ("BlockingLRWall", 10, QType.Moving, Direction.LeftRight, 0, null);
+		GameObjects [11] = new ObjectStats ("Fan", 11, QType.FullRoom, Direction.None, 40, "FanPrefab");
 
 
 		for (int i = 0; i < GameObjects.Length; i++) {
@@ -44,7 +43,11 @@ public static class Stats : object {
 		
 	}
 
+	private static Transform Load(string name){
 
+		Transform x = (Transform)Resources.Load(name, typeof(Transform));
+		return (Transform)UnityEngine.Object.Instantiate (x);
 
-
+	}
 }
+

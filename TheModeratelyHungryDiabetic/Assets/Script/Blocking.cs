@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Blocking : MonoBehaviour {
+public class Blocking : ParentPhysObj {
 
 	// Use this for initialization
 	void Start () {

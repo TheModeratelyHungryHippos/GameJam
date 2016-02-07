@@ -20,16 +20,17 @@ public class ObjectStats : object{
 	public QType QType;
 	public Direction Direction;
 	public int Weight;
-	public Type Type;
+	public Transform Prefab;
 
-	public ObjectStats(string name, int id, QType qType, Direction direction, int weight, Type type)
+	public ObjectStats(string name, int id, QType qType, Direction direction, int weight, Transform prefab)
 	{
 		Name = name;
 		ID = id;
 		this.QType = qType;
 		this.Direction = direction;
 		Weight = weight;
-		this.Type = type;
+		Prefab = prefab;
+
 	}
 		
 }

@@ -2,19 +2,17 @@
 using System.Collections;
 
 public class ParentPhysObj : MonoBehaviour {
-
-	public Rigidbody prefab;
-	private Rigidbody instance;
-
 	// Use this for initialization
-	public virtual void Start () {
+	void Start () {
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
 
-	public void DrawModel(){
-		instance = Instantiate (prefab);
+	public virtual void animate(){
 	}
+	//public void DrawModel(){
+	//	instance = Instantiate (prefab);
+	//}
 }
