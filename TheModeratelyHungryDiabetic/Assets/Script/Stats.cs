@@ -19,7 +19,7 @@ public static class Stats : object {
 
 		// % No items, % One items, % Two items, % Three items, % Four items
 		GeneratedItemsPercent = new int[5]{1, 1, 1, 1, 1 };
-		GameObjects = new ObjectStats[6];
+		GameObjects = new ObjectStats[11];
 		GameObjects [0] = new ObjectStats ("FoodBanana", 0, QType.Avoidable, Direction.None, 20, typeof(FoodBanana));
 		GameObjects [1] = new ObjectStats ("FoodPineapple", 1, QType.Avoidable, Direction.None, 20, typeof(FoodPineapple)); 
 		GameObjects [2] = new ObjectStats ("FoodBigPretzel", 2, QType.Avoidable, Direction.None, 20, typeof(FoodBigPretzel)); 

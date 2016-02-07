@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class CarbBar : MonoBehaviour {
+public class CarbBar : MonoBehaviour {
 
 	int CarbLevel { get; set; }
 
@@ -15,7 +15,7 @@ public static class CarbBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (isVisible) {
-			CarbLevel -= Time.deltaTime;
+			CarbLevel -= (int)Time.deltaTime;
 		}
 	}
 
