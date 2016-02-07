@@ -7,7 +7,7 @@ using System.Linq;
 public static class Generator : object {
 	
 	// Update is called once per frame
-	public static void Update () {
+	public static int[] Generate () {
 		Stats.Init ();
 		// ______________
 		// |  0   |  1   |
@@ -28,17 +28,15 @@ public static class Generator : object {
 		for (int i = 0; i < numItemsToGenerate; i++) {
 			int index = chooseIndex(weights);
 			idxOfItemsToAdd.Add(index);
-			//Debug.Log("A");
 			selectedObjects.Add(Stats.GameObjects[index]);
-			//Debug.Log ("B");
 		}
 
 		// If a "full room" type is selected we are done
 		foreach (ObjectStats x in selectedObjects) {
 			if (x.QType == QType.FullRoom) {
 				output [4] = x.ID;
-				Draw.Update(output.ToArray<int>());
-				return;
+				return output.ToArray<int>();
+
 			}
 		}
 
@@ -89,14 +87,12 @@ public static class Generator : object {
 
 		// Make sure there is an open space
 		if (output.Contains (-1)) {
-			Draw.Update(output.ToArray<int>());
-			return;
+			return output.ToArray<int>();
 		}
 
 		foreach (ObjectStats x in selectedObjects) {
 			if (x.QType == QType.Avoidable) {
-				Draw.Update(output.ToArray<int>());
-				return;
+				return output.ToArray<int>();
 			}
 		}
 
@@ -104,10 +100,7 @@ public static class Generator : object {
 		int rnd = UnityEngine.Random.Range(0, 4);
 		output[rnd] = -1;
 
-		Draw.Update(output.ToArray<int>());
-		return;
-	
-
+		return output.ToArray<int>();
 	}
 
 	private static int chooseIndex(int[] weights){
