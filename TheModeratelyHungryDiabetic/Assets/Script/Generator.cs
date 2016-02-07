@@ -28,7 +28,9 @@ public static class Generator : object {
 		for (int i = 0; i < numItemsToGenerate; i++) {
 			int index = chooseIndex(weights);
 			idxOfItemsToAdd.Add(index);
+			//Debug.Log("A");
 			selectedObjects.Add(Stats.GameObjects[index]);
+			//Debug.Log ("B");
 		}
 
 		// If a "full room" type is selected we are done
@@ -55,6 +57,20 @@ public static class Generator : object {
 			if (x.QType == QType.Moving) {
 				int idx = output.FindIndex (y => y == x.ID);
 
+				if (idx == -1) {
+					Debug.Log (x.Name);
+					throw new Exception ();
+					continue;
+				}
+
+				// If we get here we need to remove all other moving blocks
+				for (int i = idx; i < output.Count; i++) {
+					
+					if (output[i] != -1 && Stats.GameObjects [output [i]].QType == QType.Moving) {
+						output [i] = -1;
+					}
+				}
+
 				// Find the index of the cell being moved to
 				if (x.Direction == Direction.LeftRight) {
 					idx ^= 1;
@@ -64,6 +80,9 @@ public static class Generator : object {
 
 				// Empty a space for the movement
 				output [idx] = -1;
+
+				// We remove all other moving objects, so this will only happen once
+				break;
 					
 			}
 		}
