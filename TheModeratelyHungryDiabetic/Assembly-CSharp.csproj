@@ -49,6 +49,7 @@
      <Compile Include="Assets\Script\BlockingLRWall.cs" />
      <Compile Include="Assets\Script\BlockingUDWall.cs" />
      <Compile Include="Assets\Script\BlockingWall.cs" />
+     <Compile Include="Assets\Script\CarbBar.cs" />
      <Compile Include="Assets\Script\Draw.cs" />
      <Compile Include="Assets\Script\Food.cs" />
      <Compile Include="Assets\Script\FoodBanana.cs" />
