@@ -55,36 +55,16 @@ public static class Generator : object {
 			if (x.QType == QType.Moving) {
 				int idx = output.FindIndex (y => y == x.ID);
 
-				switch (idx) {
-				case 0:
-					if (x.Direction == Direction.LeftRight) {
-						// 1 is cleared
-					} else {
-						// 2 is cleared
-					}
-					break;
-				case 1:
-					if (x.Direction == Direction.LeftRight) {
-						// 0
-					} else {
-						// 3
-					}
-					break;
-				case 2:
-					if (x.Direction == Direction.LeftRight) {
-						// 3
-					} else {
-						// 0
-					}
-					break;
-				case 3:
-					if (x.Direction == Direction.LeftRight) {
-						// 2
-					} else {
-						// 1
-					}
-					break;
+				// Find the index of the cell being moved to
+				if (x.Direction == Direction.LeftRight) {
+					idx ^= 1;
+				} else {
+					idx ^= 2;
 				}
+
+				// Empty a space for the movement
+				output [idx] = -1;
+					
 			}
 		}
 

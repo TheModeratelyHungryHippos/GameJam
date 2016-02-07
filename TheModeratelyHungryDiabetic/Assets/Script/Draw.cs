@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Text;
 using System.Collections;
 
 public static class Draw : object {
@@ -7,10 +8,17 @@ public static class Draw : object {
 	}
 
 	private static void printArr(int[] x){
-		string y = "";
+		StringBuilder sb = new StringBuilder ();
+		ObjectStats o;
 		for(int i = 0; i < x.Length; i++){
-			y += x [i] + " "; 
+			if (x [i] == -1) {
+				sb.Append ("E ");
+				continue;
+			}
+			o = Stats.GameObjects [x [i]];
+			sb.Append (o.Name + " ");
 		}
-		Debug.Log (y);
+		sb.Append ("\n");
+		Debug.Log (sb.ToString());
 	}
 }
