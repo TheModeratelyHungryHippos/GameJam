@@ -9,15 +9,19 @@ public class CarbBar : MonoBehaviour {
 
 	public GameObject CarbBarGUI;
 
+	public GameObject BlindnessOverlay;
+
 	const int LowCarbs = 120;
 
 	const int VeryLowCarbs = 20;
 
 	const int HighCarbs = 300;
 
-	const int VeryHighCarbs = 420;
+	const int VeryHighCarbs = 400;
 
 	const int MaxMeterValue = 100;
+
+	const int MaxCarbs = 420;
 
 	int ShakingMeter = 0;
 
@@ -50,10 +54,20 @@ public class CarbBar : MonoBehaviour {
 		isVisible = true;
 	}
 
+	void EndCarbBar(){
+		isVisible = false;
+	}
+
 	void UpdateCarbBar() {
 		if (isVisible) {
-			
-			CarbLevel--;
+			if (CarbLevel > 0) {
+				if (CarbLevel > MaxCarbs) {
+					CarbLevel = MaxCarbs;
+				}
+				CarbLevel--;
+			} else {
+				CarbLevel = 0;
+			}
 			ModifyShakingMeter ();
 			SyncScreenShake (); //NEEDS FINISHING
 
@@ -108,7 +122,10 @@ public class CarbBar : MonoBehaviour {
 	}
 
 	private void SyncBlindness(){
-		//sync blindness level.
+		float lBlindValue = (BlindnessMeter * 0.01F);
+		Color temp = BlindnessOverlay.GetComponent<Renderer> ().material.color;
+		temp.a = lBlindValue;
+		BlindnessOverlay.GetComponent<Renderer> ().material.color = temp ;
 	}
 
 	private void ModifyHeartAttackMeter(){
