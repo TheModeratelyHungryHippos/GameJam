@@ -14,6 +14,12 @@ public class MovementScript : MonoBehaviour
 
 	public bool isHavingHeartAttack = false;
 
+	public AudioSource splat;
+
+	public AudioSource Insulin;
+
+	public AudioSource Food;
+
 
     // 2 - Store the movement
     private Vector3 movement;
@@ -58,8 +64,11 @@ public class MovementScript : MonoBehaviour
 
 		if (col.gameObject.GetComponent<ParentPhysObj> ().isDeath) {
 			Debug.Log ("ded");
+			splat.Play ();
+
 		} else {
 			gameObject.GetComponent<CarbBar>().ConsumePowerup (col.gameObject.GetComponent<ParentPhysObj>().CarbChange);
+			Food.Play ();
 		}
 
 

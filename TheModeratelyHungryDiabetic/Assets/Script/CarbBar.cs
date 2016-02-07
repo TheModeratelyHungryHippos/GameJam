@@ -29,7 +29,7 @@ public class CarbBar : MonoBehaviour {
 
 	const int DefaultCarbs = 210;
 
-	int ShakingMeter = 0;
+	public int ShakingMeter = 0;
 
 	int StrokeMeter = 0;
 
