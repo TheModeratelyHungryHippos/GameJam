@@ -45,9 +45,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\Blocking.cs" />
+     <Compile Include="Assets\Script\BlockingLRWall.cs" />
+     <Compile Include="Assets\Script\BlockingUDWall.cs" />
      <Compile Include="Assets\Script\BlockingWall.cs" />
      <Compile Include="Assets\Script\Draw.cs" />
+     <Compile Include="Assets\Script\Food.cs" />
+     <Compile Include="Assets\Script\FoodBanana.cs" />
+     <Compile Include="Assets\Script\FoodBigPretzel.cs" />
+     <Compile Include="Assets\Script\FoodPineapple.cs" />
+     <Compile Include="Assets\Script\FoodPizza.cs" />
      <Compile Include="Assets\Script\Generator.cs" />
+     <Compile Include="Assets\Script\Insulin.cs" />
+     <Compile Include="Assets\Script\InsulinFive.cs" />
+     <Compile Include="Assets\Script\InsulinOne.cs" />
+     <Compile Include="Assets\Script\InsulinSeven.cs" />
+     <Compile Include="Assets\Script\InsulinThree.cs" />
      <Compile Include="Assets\Script\ObjectStats.cs" />
      <Compile Include="Assets\Script\ParentPhysObj.cs" />
      <Compile Include="Assets\Script\PlayerClass.cs" />
