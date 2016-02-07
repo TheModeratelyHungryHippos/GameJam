@@ -16,12 +16,12 @@ public class StatsEditor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		InvokeRepeating ("RunEditor", 0, 1);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	public void ResetStats() {
@@ -33,8 +33,8 @@ public class StatsEditor : MonoBehaviour {
 	}
 
 	public void RunEditor() {
-		while (isStopped == false) {
-			new WaitForSeconds(1);
+		if (!isStopped) {
+			
 			StatsTimer++;
 			AdjustAllWeights ();
 		}
