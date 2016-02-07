@@ -5,6 +5,10 @@ public class CarbBar : MonoBehaviour {
 
 	int CarbLevel { get; set; }
 
+	public GameObject Player;
+
+	public GameObject CarbBarGUI;
+
 	const int LowCarbs = 120;
 
 	const int VeryLowCarbs = 20;
@@ -32,6 +36,10 @@ public class CarbBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	}
+
+	public void ConsumePowerup(int numberOfCarbs){
+		CarbLevel += numberOfCarbs;
 	}
 
 	/// <summary>
@@ -87,7 +95,7 @@ public class CarbBar : MonoBehaviour {
 
 	private void SyncStroke(){
 		if (StrokeMeter >= MaxMeterValue) {
-			//induce stroke
+			Player.GetComponent<MovementScript> ().isHavingStroke = true;
 		} else {
 			//GUI ques?
 		}
@@ -113,7 +121,7 @@ public class CarbBar : MonoBehaviour {
 
 	private void SyncHeartAttack(){
 		if (HeartAttackMeter >= MaxMeterValue) {
-			//induce heart attack.
+			Player.GetComponent<MovementScript> ().isHavingHeartAttack = true;
 		} else {
 			//GUI effects
 		}

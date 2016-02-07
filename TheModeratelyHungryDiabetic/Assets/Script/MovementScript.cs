@@ -10,19 +10,31 @@ public class MovementScript : MonoBehaviour
     /// </summary>
     public Vector3 speed = new Vector3(5, 0 , 5);
 
+	public bool isHavingStroke = false;
+
+	public bool isHavingHeartAttack = false;
+
 
     // 2 - Store the movement
     private Vector3 movement;
 
     void Update()
     {
+		
         // Retrieve axis information
         float inputX = Input.GetAxis("Horizontal");
 		float inputY = Input.GetAxis ("Vertical");
 
-        // Movement per direction
-        movement = new Vector3( speed.x * inputX, 0, speed.x * inputY);
+		if (!isHavingStroke && !isHavingHeartAttack) {
+			// Movement per direction
+			movement = new Vector3 (speed.x * inputX, 0, speed.z * inputY);
+		} else if (isHavingStroke) {
+			movement = new Vector3 (1, 0, speed.z * inputY);
 
+		} else {
+			movement = new Vector3 (0, 0, 0);
+
+		}
 
 		/*
         var pos = Camera.main.WorldToScreenPoint(transform.position);
