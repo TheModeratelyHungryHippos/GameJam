@@ -474,6 +474,7 @@ MonoBehaviour:
   CarbBarSlider: {fileID: 998521200}
   Text: {fileID: 111077688}
   BlindnessOverlay: {fileID: 0}
+  ShakingMeter: 0
 --- !u!1 &909355992
 GameObject:
   m_ObjectHideFlags: 0

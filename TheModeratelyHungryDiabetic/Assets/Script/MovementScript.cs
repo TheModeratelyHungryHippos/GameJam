@@ -57,7 +57,7 @@ public class MovementScript : MonoBehaviour
 		}
 
 		if (col.gameObject.GetComponent<ParentPhysObj> ().isDeath) {
-			Debug.Log ("ded");
+			killme ();
 		} else {
 			gameObject.GetComponent<CarbBar>().ConsumePowerup (col.gameObject.GetComponent<ParentPhysObj>().CarbChange);
 		}
@@ -66,5 +66,10 @@ public class MovementScript : MonoBehaviour
 		Destroy (col.gameObject);
 	}
 
+	private void killme(){
+		for (int i = 0; i < 5000; i++) {
+		}
+		Application.LoadLevel(Application.loadedLevel);
+	}
 }
 

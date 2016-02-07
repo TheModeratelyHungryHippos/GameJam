@@ -29,7 +29,7 @@ public class CarbBar : MonoBehaviour {
 
 	const int DefaultCarbs = 210;
 
-	int ShakingMeter = 0;
+	public int ShakingMeter = 0;
 
 	int StrokeMeter = 0;
 
@@ -91,6 +91,9 @@ public class CarbBar : MonoBehaviour {
 			} else {
 				CarbLevel = 0;
 			}
+
+			ModifyShakingMeter ();
+
 			/*
 			ModifyShakingMeter ();
 			SyncScreenShake (); //NEEDS FINISHING
@@ -180,4 +183,9 @@ public class CarbBar : MonoBehaviour {
 		}
 	}
 
+	private void killme(){
+		for (int i = 0; i < 5000; i++) {
+		}
+		Application.LoadLevel(Application.loadedLevel);
+	}
 }

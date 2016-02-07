@@ -51,6 +51,7 @@
      <Compile Include="Assets\Script\BlockingSpikes.cs" />
      <Compile Include="Assets\Script\BlockingUDWall.cs" />
      <Compile Include="Assets\Script\BlockingWall.cs" />
+     <Compile Include="Assets\Script\CameraShakeScript.cs" />
      <Compile Include="Assets\Script\CarbBar.cs" />
      <Compile Include="Assets\Script\Draw.cs" />
      <Compile Include="Assets\Script\Food.cs" />
@@ -60,10 +61,6 @@
      <Compile Include="Assets\Script\FoodPizza.cs" />
      <Compile Include="Assets\Script\Generator.cs" />
      <Compile Include="Assets\Script\Insulin.cs" />
-     <Compile Include="Assets\Script\InsulinFive.cs" />
-     <Compile Include="Assets\Script\InsulinOne.cs" />
-     <Compile Include="Assets\Script\InsulinSeven.cs" />
-     <Compile Include="Assets\Script\InsulinThree.cs" />
      <Compile Include="Assets\Script\MovementScript.cs" />
      <Compile Include="Assets\Script\ObjectStats.cs" />
      <Compile Include="Assets\Script\ParentPhysObj.cs" />
