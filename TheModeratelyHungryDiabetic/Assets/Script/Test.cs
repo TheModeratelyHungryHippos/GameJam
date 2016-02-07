@@ -2,20 +2,13 @@
 using System.Collections;
 
 public class Test : MonoBehaviour {
-
-	int count = 10;
 	// Use this for initialization
 	void Start () {
-		Generator.Update();
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (count == 0) {
-			count = 10;
-			Generator.Update ();
-		}
-		count--;
+		transform.position = new Vector3(transform.position.x, (float)(transform.position.y + 0.5), transform.position.z);
 	}
 }
