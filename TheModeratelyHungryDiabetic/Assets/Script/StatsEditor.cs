@@ -65,7 +65,17 @@ public class StatsEditor : MonoBehaviour {
 			}
 
 		} else if (StatsTimer <= LevelThree) {
-			
+			if (StatsTimer <= LevelThree) {
+				if (StatsTimer % 5 == 0) {
+					Stats.GeneratedItemsPercent [0]++;
+					Stats.GeneratedItemsPercent [1]++;
+				} else if (StatsTimer % 3 == 0) {
+					Stats.GeneratedItemsPercent [2]++;
+					Stats.GeneratedItemsPercent [3]++;
+				} else {
+					Stats.GeneratedItemsPercent [3]++;
+				}
+			}
 		} else {
 			Stats.GeneratedItemsPercent [3]++;
 			Stats.GeneratedItemsPercent [4]++;
