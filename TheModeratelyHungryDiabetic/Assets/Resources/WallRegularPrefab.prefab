@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 410576}
   m_Layer: 0
-  m_Name: Wall_Regular
+  m_Name: WallRegularPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

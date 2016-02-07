@@ -26,7 +26,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 494268}
   m_Layer: 0
-  m_Name: Fan
+  m_Name: FanPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

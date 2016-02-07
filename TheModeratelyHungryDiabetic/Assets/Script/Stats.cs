@@ -31,7 +31,7 @@ public static class Stats : object {
 		GameObjects [8] = new ObjectStats ("BlockingWall", 8, QType.Blocking, Direction.None, 20, Stats.Load("WallRegularPrefab"));
 		GameObjects [9] = new ObjectStats ("BlockingUDWall", 9, QType.Moving, Direction.UpDown, 0, null);
 		GameObjects [10] = new ObjectStats ("BlockingLRWall", 10, QType.Moving, Direction.LeftRight, 0, null);
-		GameObjects [11] = new ObjectStats ("Fan", 11, QType.FullRoom, Direction.None, 40, "FanPrefab");
+		GameObjects [11] = new ObjectStats ("Fan", 11, QType.FullRoom, Direction.None, 40, Stats.Load("FanPrefab"));
 
 
 		for (int i = 0; i < GameObjects.Length; i++) {
