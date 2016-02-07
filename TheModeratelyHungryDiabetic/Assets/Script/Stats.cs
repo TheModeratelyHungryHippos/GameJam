@@ -31,10 +31,7 @@ public static class Stats : object {
 		GameObjects [8] = new ObjectStats ("BlockingWall", 8, QType.Blocking, Direction.None, 20, typeof(BlockingWall));
 		GameObjects [9] = new ObjectStats ("BlockingUDWall", 9, QType.Moving, Direction.UpDown, 20, typeof(BlockingUDWall));
 		GameObjects [10] = new ObjectStats ("BlockingLRWall", 10, QType.Moving, Direction.LeftRight, 20, typeof(BlockingWall));
-		GameObjects [11] = new ObjectStats ("BlockingWall", 11, QType.Blocking, Direction.None, 20, typeof(BlockingWall));
-		GameObjects [12] = new ObjectStats ("BlockingWall", 12, QType.Blocking, Direction.None, 20, typeof(BlockingWall));
-		GameObjects [13] = new ObjectStats ("BlockingWall", 13, QType.Blocking, Direction.None, 20, typeof(BlockingWall));
-		GameObjects [14] = new ObjectStats ("BlockingWall", 14, QType.Blocking, Direction.None, 20, typeof(BlockingWall));
+
 
 
 
